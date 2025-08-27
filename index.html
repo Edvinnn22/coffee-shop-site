@@ -3,7 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Somewhere Coffee</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- Navigation -->
+    <header id="header">
+      <nav class="navbar">
+        <div class="logo">somewhere</div>
+
+        <!-- Extra UI Elements -->
+        <div class="header-extras">
+          <!-- World / Language icon -->
+          <div class="header-icon" title="Change language">
+            🌐<span>SE/EN</span>
+          </div>
+
+          <!-- Help / Info icon -->
+          <div class="header-icon" title="Help">❓<span>Help</span></div>
+
+          <!-- Location Icon -->
+          <div class="header-icon" title="Find us here">
+            📍<span>Find us</span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section with Video Background -->
+    <section id="home" class="hero">
+      <video autoplay muted loop playsinline id="bg-video">
+        <source src="videos/2909914-uhd_3840_2024_24fps.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="hero-overlay"></div>
+
+      <!-- Floating shapes -->
+      <div class="floating-shape shape1"></div>
+      <div class="floating-shape shape2"></div>
+      <div class="floating-shape shape3"></div>
+
+      <div class="hero-content">
+        <h1>welcome to somewhere</h1>
+        <p>coffee, quietly brewed</p>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro">
+      <div class="intro-wrapper">
+        <!-- Left-aligned text -->
+        <div class="intro-text">
+          <h2>what makes us stand out</h2>
+          <p>
+            At Somewhere, every cup is crafted slowly, letting the aroma guide
+            the moment. No rush, no fuss—just coffee that feels like it was made
+            for you. Our space is quiet, cozy, and effortless; the kind of place
+            where ideas drift as freely as steam from your mug.
+          </p>
+        </div>
+
+        <!-- Right-side floating icons -->
+        <div class="intro-icons">
+          <div class="floating-icon icon1">☕</div>
+          <div class="floating-icon icon2">☕</div>
+          <div class="floating-icon icon3">☕</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured" class="featured">
+      <h2 class="section-title">our most loved drink</h2>
+
+      <div class="featured-item">
+        <img
+          src="images/fernando-andrade-kgoDcV9lihY-unsplash.jpg"
+          alt="Caramel Latte"
+          class="featured-img"
+        />
+        <div class="featured-info">
+          <h3>Caramel Latte</h3>
+          <p>
+            Smooth espresso with steamed milk, topped with sweet caramel
+            drizzle. A favorite for those seeking a cozy, indulgent coffee
+            moment.
+          </p>
+          <a href="menu.html" class="btn featured-btn">see full menu</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">somewhere</div>
+
+        <div class="footer-links">
+          <a href="#" title="Instagram">📸 Instagram</a>
+          <a href="#" title="Facebook">📘 Facebook</a>
+          <a href="#" title="Contact">✉️ Contact</a>
+          <a href="#" title="Location">📍 Find us</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Somewhere. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,0 +1,460 @@
+/* ======================= */
+/*        RESET            */
+/* ======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  color: #fff;
+  background: #111;
+  overflow-x: hidden;
+}
+
+/* ======================= */
+/*        HEADER           */
+/* ======================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+header.scrolled {
+  /* background: rgba(34, 24, 20, 0.95); */
+  /* background: rgba(17, 17, 17, 0.95); */
+  /* background: rgba(25, 25, 25, 0.95); */
+  background: linear-gradient(to top, #1a1a1a, #111);
+
+  backdrop-filter: blur(6px);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+/* Extra header icons (language, help, location) */
+.header-extras {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  color: #ffffffcc;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+
+  /* Animation */
+  opacity: 0;
+  animation: iconFadeUp 0.8s ease forwards;
+}
+
+.header-icon:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.header-icon:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.header-icon:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+.header-icon span {
+  font-size: 0.9rem;
+}
+
+.header-icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* ======================= */
+/*        HERO             */
+/* ======================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 15, 10, 0.4);
+  z-index: -1;
+}
+
+/* Floating shapes in hero */
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  z-index: 0;
+  background: #d7ccc8;
+  animation: float 8s ease-in-out infinite alternate;
+}
+
+.shape1 {
+  width: 60px;
+  height: 60px;
+  top: 20%;
+  left: 10%;
+  animation-duration: 10s;
+}
+.shape2 {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 80%;
+  animation-duration: 12s;
+}
+.shape3 {
+  width: 80px;
+  height: 80px;
+  top: 70%;
+  left: 40%;
+  animation-duration: 15s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-20px) translateX(15px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+/* Hero content */
+.hero-content {
+  z-index: 1;
+  animation: fadeIn 2s ease forwards;
+  transition: transform 0.3s ease-out;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: slideUp 1s ease forwards 0.5s;
+  text-transform: lowercase;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: slideUp 1s ease forwards 1s;
+}
+
+/* Buttons in hero */
+.btn {
+  padding: 0.8rem 1.8rem;
+  background: #7a6451;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  text-transform: lowercase;
+  transition: background 0.3s ease, transform 0.2s;
+  opacity: 0;
+  animation: slideUp 1s ease forwards 1.5s;
+}
+
+.btn:hover {
+  background: #5d4037;
+  transform: scale(1.05);
+}
+
+/* ======================= */
+/*        INTRO            */
+/* ======================= */
+.intro {
+  background: #111;
+  color: #f5f3f0;
+  padding: 8rem 5%;
+}
+
+.intro-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3rem;
+}
+
+.intro-text {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.intro.show p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating coffee icons on right */
+.intro-icons {
+  flex: 1;
+  position: relative;
+}
+
+.floating-icon {
+  position: absolute;
+  font-size: 2rem;
+  color: #d7ccc8;
+  opacity: 0.3;
+  z-index: 0;
+  animation: floatIcon 8s ease-in-out infinite alternate;
+}
+
+.icon1 {
+  top: 10%;
+  left: 20%;
+  animation-duration: 10s;
+}
+.icon2 {
+  top: 50%;
+  left: 60%;
+  animation-duration: 12s;
+}
+.icon3 {
+  top: 70%;
+  left: 30%;
+  animation-duration: 15s;
+}
+
+@keyframes floatIcon {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-15px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+/* ======================= */
+/*      FEATURED DRINK      */
+/* ======================= */
+.featured {
+  background: #1a1a1a; /* slightly lighter than intro */
+  color: #f5f3f0;
+  padding: 10rem;
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-end;  */
+  align-items: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.featured-item {
+  display: flex;
+  flex-direction: row; /* horizontal card */
+  background: #1b1b1b;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 700px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.featured-item:hover {
+  transform: translateY(-5px);
+}
+
+.featured-img {
+  width: 40%;
+  object-fit: cover;
+}
+
+.featured-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
+}
+
+.featured-info h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+}
+
+.featured-info p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ddd;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* pushes button to bottom */
+}
+
+.featured-btn {
+  align-self: flex-end;
+  margin-top: auto;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: #7a6451;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  text-transform: lowercase;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.featured-btn:hover {
+  background: #5d4037;
+  transform: scale(1.05);
+}
+
+/* ======================= */
+/*      FOOTER          */
+/* ======================= */
+
+.footer {
+  /* background: #111; */
+  background: linear-gradient(to top, #1a1a1a, #111);
+  /* background: #1a1a1a;  */
+  /* background: rgba(34, 24, 20, 0.95); */
+  color: #f5f3f0;
+  padding: 3rem 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #ffffffcc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #d7ccc8;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* ======================= */
+/*      ANIMATIONS          */
+/* ======================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes iconFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
